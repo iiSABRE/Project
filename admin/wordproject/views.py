@@ -13,6 +13,8 @@ def word_json(request):
     return HttpResponse(data, content_type='application/json')
 	
 def word_json_update(request):
-    words = WordRecord.objects.filter(dateCreated=timezone.now())
+    first = datetime.date(2016,1,1)
+	last = timezone.now()
+    words = WordRecord.objects.filter(dateCreated__range=(first, last)
     data = serializers.serialize("json", words)
     return HttpResponse(data, content_type='application/json')
