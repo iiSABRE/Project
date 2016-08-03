@@ -18,3 +18,8 @@ def word_json_update(request, year, month, day):
     words = WordRecord.objects.filter(dateUpdated__range=(first_date, last_date))
     data = serializers.serialize("json", words)
     return HttpResponse(data, content_type='application/json')
+	
+def word_json_update_all(request):
+    words = WordRecord.objects.all()
+    data = serializers.serialize("json", words)
+    return HttpResponse(data, content_type='application/json')
