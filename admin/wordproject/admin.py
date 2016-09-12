@@ -11,9 +11,12 @@ class WordCustom(admin.StackedInline):
 
 class WordRecordAdmin(admin.ModelAdmin):
     inlines = [WordCustom]
-    list_display = ['word', 'language', 'description', 'dateCreated', 'dateUpdated', 'publish']
+    list_display = ['word', 'language', 'get_secondary', 'dateCreated', 'dateUpdated', 'publish']
     search_fields = ('word', 'language')
     list_filter = ('language',)
+	
+    def get_secondary(self, obj)
+         return obj.language
 
 
 class SoundAdmin(admin.ModelAdmin):
