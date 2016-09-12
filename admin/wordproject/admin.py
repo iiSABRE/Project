@@ -16,7 +16,8 @@ class WordRecordAdmin(admin.ModelAdmin):
     list_filter = ('language',)
 	
     def get_secondary(self, obj):
-         return obj.language
+	     b = WordPair.filter(original=word)
+         return b.language
 
 
 class SoundAdmin(admin.ModelAdmin):
