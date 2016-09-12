@@ -15,7 +15,7 @@ class WordRecordAdmin(admin.ModelAdmin):
     search_fields = ('word', 'language')
     list_filter = ('language',)
 	
-    def get_secondary(self, obj)
+    def get_secondary(self, obj):
          return obj.language
 
 
