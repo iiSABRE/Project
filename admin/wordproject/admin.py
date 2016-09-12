@@ -11,7 +11,7 @@ class WordCustom(admin.StackedInline):
 
 class WordRecordAdmin(admin.ModelAdmin):
     inlines = [WordCustom]
-    list_display = ['word', 'language', 'description', 'dateCreated', 'dateUpdated', 'publish']
+    list_display = ['word', 'description', 'dateCreated', 'dateUpdated', 'publish']
     search_fields = ('word', 'language')
 
 
