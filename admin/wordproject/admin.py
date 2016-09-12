@@ -13,6 +13,7 @@ class WordRecordAdmin(admin.ModelAdmin):
     inlines = [WordCustom]
     list_display = ['word', 'language', 'description', 'dateCreated', 'dateUpdated', 'publish']
     search_fields = ('word', 'language')
+	list_filter = ('language')
 
 
 class SoundAdmin(admin.ModelAdmin):
