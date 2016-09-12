@@ -17,7 +17,7 @@ class WordRecordAdmin(admin.ModelAdmin):
 	
     def get_secondary(self, obj):
          b = WordPair.objects.filter(original=obj.word)
-         return b.translation
+         return b
 
 
 class SoundAdmin(admin.ModelAdmin):
