@@ -16,7 +16,7 @@ class WordRecordAdmin(admin.ModelAdmin):
     list_filter = ('language',)
 	
     def get_secondary(self, obj):
-	     b = WordPair.objects.get(fk_name=obj.word)
+         b = WordPair.objects.get(fk_name=obj.word)
          return b
 
 
