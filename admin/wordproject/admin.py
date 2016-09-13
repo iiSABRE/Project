@@ -18,10 +18,11 @@ class WordRecordAdmin(admin.ModelAdmin):
     def Translation_Language(self, obj):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
-         if c: 
-             return c[0].language
+         if c:
+             for i, c in enumerate(queryset):		 
+               return c[i].language
          else:
-             return "-"	
+               return "-"	
 	
     def Translation(self, obj):
          b = WordPair.objects.filter(original=obj.id).values('translation')
