@@ -19,8 +19,8 @@ class WordRecordAdmin(admin.ModelAdmin):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
          if c:
-             for i, c in enumerate(c):		 
-               return c[i].language
+               for WordPair in c
+                 return c[i].language
          else:
                return "-"	
 	
