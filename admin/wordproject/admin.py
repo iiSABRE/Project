@@ -18,9 +18,9 @@ class WordRecordAdmin(admin.ModelAdmin):
     def get_secondary(self, obj):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
-         if not c 
+         if not c: 
          return c[0].word
-         else
+         else:
          return "NULL"		 
 
 
