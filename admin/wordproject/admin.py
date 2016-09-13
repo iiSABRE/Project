@@ -15,7 +15,7 @@ class WordRecordAdmin(admin.ModelAdmin):
     search_fields = ('word', 'language')
     list_filter = ('language', 'Translation_Language')
 	
-	def Translation_Language(self, obj):
+    def Translation_Language(self, obj):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
          if c: 
