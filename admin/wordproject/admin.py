@@ -19,9 +19,9 @@ class WordRecordAdmin(admin.ModelAdmin):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
          if c: 
-         return c[0].word
+             return c[0].word
          else:
-         return "NULL"		 
+             return "NULL"		 
 
 
 class SoundAdmin(admin.ModelAdmin):
