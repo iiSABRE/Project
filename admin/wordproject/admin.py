@@ -13,7 +13,7 @@ class WordRecordAdmin(admin.ModelAdmin):
     inlines = [WordCustom]
     list_display = ['word', 'language' , 'Translation_Language', 'Translaton', 'dateCreated', 'dateUpdated', 'publish']
     search_fields = ('word', 'language')
-    list_filter = ('language', 'Translation_Language')
+    list_filter = ('language',)
 	
     def Translation_Language(self, obj):
          b = WordPair.objects.filter(original=obj.id).values('translation')
