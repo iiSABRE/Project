@@ -18,7 +18,7 @@ class WordRecordAdmin(admin.ModelAdmin):
 	
     def Translation_Language(self, obj):
          b = WordPair.objects.filter(original=obj.id)
-         c = WordRecord.objects.filter(id=b.WordPair.original)
+         c = WordRecord.objects.filter(id=b.original)
          if c:
                return c.count()
             #for wordrecord in c:
