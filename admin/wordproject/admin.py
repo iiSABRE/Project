@@ -17,11 +17,11 @@ class WordRecordAdmin(admin.ModelAdmin):
     list_filter = ('language',)
 	
     def Translation_Language(self, obj):
-         b = WordPair.objects.filter(original=obj.id)
+         b = WordPair.objects.filter(translation=obj.id)
          #c = WordRecord.objects.filter(id=b.original)
          if b:
             for wordpair in b:
-               return ' %s' % (wordpair.translation)
+               return '%s' % (wordpair.translation)
          else:
                return "-"
     Translation_Language.allow_tags = True
