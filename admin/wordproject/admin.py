@@ -19,9 +19,9 @@ class WordRecordAdmin(admin.ModelAdmin):
     def Translation_Language(self, obj):
          b = WordPair.objects.filter(translation=obj.id)
          if b:
-            for wordpair in b:
-               c = WordRecord.objects.filter(word = wordpair.translation)
-               return c
+            #for wordpair in b:
+               #c = WordRecord.objects.filter(word = wordpair.translation)
+               return b
          else:
                return "-"
     Translation_Language.allow_tags = True
