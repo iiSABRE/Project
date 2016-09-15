@@ -32,8 +32,7 @@ class WordRecordAdmin(admin.ModelAdmin):
             for wordpair in b:
                return linebreaks(wordpair.original)
          else:
-               return "-"
-    Translation_Language.allow_tags = True	 
+               return "-" 
 
 
 class SoundAdmin(admin.ModelAdmin):
