@@ -17,16 +17,14 @@ class WordRecordAdmin(admin.ModelAdmin):
     list_filter = ('language',)
 	
     def Translation_Language(self, obj):
-         b = WordPair.objects.filter(original=obj.id).values('translation')
-         c = WordRecord.objects.filter(id=b)
+         b = WordPair.objects.filter(original=obj.id)
+         c = WordRecord.objects.filter(id=b.translation)
          if c:
                return c.count()
             #for wordrecord in c:
                #return linebreaks(wordrecord.language)
          else:
                return "-"
-    Translation_Language.short_description = u'Translation Language'
-    Translation_Language.admin_ordering_field = 'get_variants'
     Translation_Language.allow_tags = True
 	
     def Translation(self, obj):
