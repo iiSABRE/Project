@@ -21,7 +21,7 @@ class WordRecordAdmin(admin.ModelAdmin):
          #c = WordRecord.objects.filter(id=b.original)
          if b:
             for wordpair in b:
-               return wordpair.original
+               return wordpair.translation
                #return linebreaks(wordrecord.language)
          else:
                return "-"
