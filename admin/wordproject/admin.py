@@ -18,9 +18,9 @@ class WordRecordAdmin(admin.ModelAdmin):
 	
     def Translation_Language(self, obj):
          b = WordPair.objects.filter(original=obj.id)
-         c = WordRecord.objects.filter(id=b.translation)
-         if c:
-               return c.count()
+         #c = WordRecord.objects.filter(id=b.translation)
+         if b:
+               return b.count()
             #for wordrecord in c:
                #return linebreaks(wordrecord.language)
          else:
