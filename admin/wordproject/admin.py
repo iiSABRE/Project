@@ -32,7 +32,7 @@ class WordRecordAdmin(admin.ModelAdmin):
          if c:
             #for wordpair in b:
                #return linebreaks(wordpair.original)
-			   return c
+               return c
          else:
                return "-"
     Translation.allow_tags = True	 
