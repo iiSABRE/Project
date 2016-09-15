@@ -21,16 +21,18 @@ class WordRecordAdmin(admin.ModelAdmin):
          if b:
             #for wordpair in b:
                #c = WordRecord.objects.filter(word = wordpair.translation)
-               return b.translation
+               return b
          else:
                return "-"
     Translation_Language.allow_tags = True
 	
     def Translation(self, obj):
          b = WordPair.objects.filter(translation=obj.id)
-         if b:
-            for wordpair in b:
-               return linebreaks(wordpair.original)
+		 c = WordPair.objects.values_list('original')
+         if c:
+            #for wordpair in b:
+               #return linebreaks(wordpair.original)
+			   return c
          else:
                return "-"
     Translation.allow_tags = True	 
