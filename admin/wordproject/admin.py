@@ -20,7 +20,7 @@ class WordRecordAdmin(admin.ModelAdmin):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
          if c:
-            return {{ c.count }}
+            return c.count 
             #for wordrecord in c:
                #return linebreaks(wordrecord.language)
          else:
