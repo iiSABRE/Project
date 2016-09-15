@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import linebreaks
 
 from .models import WordRecord, Sound, SoundPair, WordPair
 
@@ -20,7 +21,7 @@ class WordRecordAdmin(admin.ModelAdmin):
          c = WordRecord.objects.filter(id=b)
          if c:
             for wordrecord in c:
-               return '%s<br>'(WordRecord.language)
+               return linebreaks(WordRecord.language)
          else:
                return "-"
     Translation_Language.allow_tags = True
