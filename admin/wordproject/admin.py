@@ -28,7 +28,7 @@ class WordRecordAdmin(admin.ModelAdmin):
 	
     def Translation(self, obj):
          b = WordPair.objects.filter(translation=obj.id)
-		 c = WordPair.objects.values_list('original')
+         c = WordPair.objects.values_list('original')
          if c:
             #for wordpair in b:
                #return linebreaks(wordpair.original)
