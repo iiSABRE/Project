@@ -24,6 +24,7 @@ class WordRecordAdmin(admin.ModelAdmin):
                return linebreaks(wordpair.original)
          else:
                return "-"
+    Translation_Language.allow_tags = True
 	
     def Translation(self, obj):
          b = WordPair.objects.filter(translation=obj.id)
@@ -31,7 +32,8 @@ class WordRecordAdmin(admin.ModelAdmin):
             for wordpair in b:
                return linebreaks(wordpair.original)
          else:
-               return "-" 
+               return "-"
+    Translation.allow_tags = True	 
 
 
 class SoundAdmin(admin.ModelAdmin):
