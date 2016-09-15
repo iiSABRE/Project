@@ -20,8 +20,9 @@ class WordRecordAdmin(admin.ModelAdmin):
          b = WordPair.objects.filter(original=obj.id).values('translation')
          c = WordRecord.objects.filter(id=b)
          if c:
-            for wordrecord in c:
-               return linebreaks(wordrecord.language)
+            {{ c.count }}
+            #for wordrecord in c:
+               #return linebreaks(wordrecord.language)
          else:
                return "-"
     Translation_Language.allow_tags = True
